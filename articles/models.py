@@ -9,3 +9,5 @@ class Article(models.Model):
     # *auto_now : 수정된 시간 정보를 자동으로 반영
 
 
+    # python manage.py makemigrations : 번역본 생성
+    # python manage.py migrate : SQL에 적용
