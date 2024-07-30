@@ -33,6 +33,10 @@ def create(request):
 
     return redirect('articles:detail',id=article.id)
 
+def delete(reqeust, id):
+    article = Article.objects.get(id=id)
+    article.delete()
+
+    return redirect('articles:index')
 
 
-    
