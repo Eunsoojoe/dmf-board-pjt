@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!-- method="GET" : Default -->
+<!-- method="POST" : 'Create'와 같은 맥락, 검증 토큰이 필요함.ㄴ -->
+
+<form action="{% url 'articles:create' %}" method="POST">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" id="title" class="form-control" name="title">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea name="content" id="content" class="form-control" rows="10" ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
