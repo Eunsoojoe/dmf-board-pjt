@@ -2,9 +2,10 @@
 
 {% block body %}
 <!-- method="GET" : Default -->
-<!-- method="POST" : 'Create'와 같은 맥락, 검증 토큰이 필요함.ㄴ -->
+<!-- method="POST" : C,U,D는 DB의 조작이 필요하므로 검증 토큰이 필요함. -->
+ <!-- RESTful한 URL : 명사로만 구성 -->
 
-<form action="{% url 'articles:create' %}" method="POST">
+<form action="{% url 'articles:create' id=article.id %}" method="POST">
     {% csrf_token %}
 
     <div class="mb-3">
