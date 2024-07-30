@@ -15,7 +15,7 @@
                 <tr>
                     <td>{{article.title}}</td>
                     <td>{{article.created_at}}</td>
-                    <td><a href="">link</a></td>
+                    <td><a href="{% url 'articles:detail' id=article.id %}">link</a></td>
                 </tr>
             {% endfor %}
 
