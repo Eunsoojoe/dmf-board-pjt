@@ -14,6 +14,9 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# 현재 나 자신을 기준으로(setting.py) 경로를 만들고
+# 나의 위치를 기준으로 부모의 부모
+# => 최상위 폴더 'BOARD'를 가리킴.
 
 
 # Quick-start development settings - unsuitable for production
@@ -55,7 +58,8 @@ ROOT_URLCONF = 'board.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'], 
+        # BOARD/templates에서도 html 파일을 찾아줘. 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
